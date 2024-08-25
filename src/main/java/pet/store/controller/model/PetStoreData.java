@@ -3,13 +3,8 @@ package pet.store.controller.model;
 import java.util.HashSet;
 import java.util.Set;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.OneToMany;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
-import lombok.Value;
 import pet.store.entity.Customer;
 import pet.store.entity.Employee;
 import pet.store.entity.PetStore;
@@ -49,14 +44,14 @@ public class PetStoreData {
 	
 	@Data
 	@NoArgsConstructor
-	static class PetStoreEmployee {
+	public static class PetStoreEmployee {
 		private Long employeeId;
 		private String employeeJobTitle;
 		private String employeeFirstName;
 		private String employeeLastName;
 		private Long employeePhone;
 		
-		PetStoreEmployee(Employee employee) {
+		public PetStoreEmployee(Employee employee) {
 			employeeId = employee.getEmployeeId();
 			employeeJobTitle = employee.getEmployeeJobTitle();
 			employeeFirstName = employee.getEmployeeFirstName();
